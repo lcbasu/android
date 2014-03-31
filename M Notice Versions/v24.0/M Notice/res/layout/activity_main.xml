@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <requestFocus />
+    
+    <LinearLayout
+        android:id="@+id/horizontalScrollListView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:orientation="vertical" >
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp" >
+
+        <LinearLayout
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/placementQuery"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="20dp"
+                android:text="Placement"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="10dp"
+                android:background="@drawable/placement"
+                android:gravity="bottom|center"
+                 />
+
+            <Button
+                android:id="@+id/doswQuery"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                
+                android:layout_marginRight="20dp"
+                android:text="DOSW"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="10dp"
+                android:background="@drawable/dosw"
+                android:gravity="bottom|center"
+                 />
+
+            <Button
+                android:id="@+id/acadQuery"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:gravity="bottom|center"
+                android:layout_marginRight="20dp"
+                android:text="Academics"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="10dp"
+                android:background="@drawable/acad"
+                 />            
+
+            <Button
+                android:id="@+id/recomendationQuery"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:gravity="bottom|center"
+                android:layout_marginRight="20dp"
+                android:text="Recommend"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="10dp"
+                android:background="@drawable/recomended"
+                 />
+
+
+            <Button
+                android:id="@+id/miscQuery"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+				android:gravity="bottom|center"
+                android:layout_marginRight="20dp"
+                android:text="Misc"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="10dp"
+                android:background="@drawable/miscellanous"
+                 />            
+            
+            
+        </LinearLayout>
+    </HorizontalScrollView>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="320dp"
+        android:gravity="center_vertical" 
+        android:layout_below="@+id/horizontalScrollListView"       
+         />
+
+    <Button
+        android:id="@+id/refreshButon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:background="@drawable/refresh" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/refreshButon"
+        android:layout_alignBottom="@+id/refreshButon"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/search" />
+
+    <Button
+        android:id="@+id/listViewButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:background="@drawable/list_view" />
+
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="19dp"
+        android:layout_toRightOf="@+id/refreshButon"
+        android:layout_below="@+id/refreshButon"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/searchBox"
+        android:layout_alignParentLeft="true"
+        android:text="Search:" />
+
+</RelativeLayout>

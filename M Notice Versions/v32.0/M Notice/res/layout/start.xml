@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Start" >
+    
+	<TextView
+	    android:id="@+id/textView"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp"
+		android:gravity="center"
+	    android:text="Operate as:"
+	    android:textSize="30dp" 
+	    android:layout_weight="60"
+	    />
+    
+    <LinearLayout
+        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        
+        android:layout_below="@+id/textView"
+        android:weightSum="100" >
+
+    <Button
+        android:id="@+id/btSer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="50"
+        android:textSize="25dp"
+        android:background="@drawable/server"        
+        android:gravity="bottom|center"
+        android:layout_margin="10dp"
+        android:textColor="@color/white1"
+        android:text="Server" />
+
+    <Button
+        android:id="@+id/btCli"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/btSer"
+        android:layout_weight="50"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/client"
+        android:gravity="bottom|center"
+        android:textColor="@color/white1"
+        android:text="Client" />
+    
+    </LinearLayout>
+
+    
+
+</RelativeLayout>
