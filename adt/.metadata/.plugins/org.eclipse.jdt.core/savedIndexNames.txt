@@ -1,9 +1,6 @@
 INDEX VERSION 1.126+/Users/LokeshBasu/Documents/android/adt/.metadata/.plugins/org.eclipse.jdt.core
-2701851156.index
-2649118158.index
-3017826034.index
 2090607505.index
 38401638.index
-1542256292.index
+2701851156.index
 692554281.index
 940004907.index
