@@ -56,7 +56,7 @@ public class MainActivity extends Activity implements ChannelListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         // create the app folder if doesn't exit and do the initialization work.
-        File file= new File("/sdcard/ee579");
+        File file= new File("/sdcard/psk");
         if(!file.exists()) file.mkdirs();
         initialization();
         fileNeeded=getFileNeeded();
@@ -198,7 +198,7 @@ public class MainActivity extends Activity implements ChannelListener{
     //show device info on screen
     public void updateThisDevice(WifiP2pDevice device) {
         TextView view = (TextView)findViewById(R.id.mystatus);
-        view.setText("My Name: "+device.deviceName+"\nMy Address: "+device.deviceAddress+"\nMy Status: "+getDeviceStatus(device.status));
+        view.setText("My Name: " + device.deviceName + "\nMy Address: " + device.deviceAddress + "\nMy Status: " + getDeviceStatus(device.status));
         return;
     }
     
@@ -283,113 +283,6 @@ public class MainActivity extends Activity implements ChannelListener{
         return;
     }
 
-    
-/* The following part is pure Hash Table solution.
- * It will maintain a HashTable for the Files it has and each File also has a HashTable of chunk list.
- * 
- * 
- * 
-    static HashMap<String, HashMap<String, Boolean>> availableFileChunks= new HashMap<String, HashMap<String, Boolean>>();
-    static HashMap<String, HashMap<String, Boolean>> neededFileChunks= new HashMap<String, HashMap<String, Boolean>>();
-    void initialization(){
-	File listFile=new File("/sdcard/ee579filelist.txt");
-	File recordFile=new File("/sdcard/ee579record.txt");
-	try {
-	    BufferedReader inputReader = new BufferedReader(new FileReader(listFile));
-	    String buffer = new String(); 
-	    while((buffer=inputReader.readLine())!=null){  
-		String [] fileInfo= buffer.split(",");		
-		allFileList.put(fileInfo[0], fileInfo[1]);
-		int num=divRoundUp(Integer.parseInt(fileInfo[2]),BYTESPERCHUNK);
-		numOfChunks.put(fileInfo[0],num);
-	    }
-	    inputReader.close();
-	    inputReader=new BufferedReader(new FileReader(recordFile));
-	    while((buffer=inputReader.readLine())!=null){  
-		String [] fileInfo= buffer.split(",");		
-		if((buffer=inputReader.readLine())!=null){
-		    HashMap<String, Boolean> chunkMap= new HashMap<String, Boolean>();
-		    String [] chunkNum= buffer.split(",");
-		    for(int i=0;i<chunkNum.length;i++){
-			chunkMap.put(chunkNum[i], true);
-		    }
-		    availableFileChunks.put(fileInfo[0], chunkMap);
-		}
-	    }
-	    inputReader.close();
-	    Set<String>files= allFileList.keySet();
-	    Iterator<String> it=files.iterator();
-	    while(it.hasNext()){
-		buffer=it.next();
-		if(availableFileChunks.get(buffer)==null){
-		    HashMap<String, Boolean> chunkMap= new HashMap<String, Boolean>();
-		    for(int i=0;i<numOfChunks.get(buffer);i++){
-			chunkMap.put(new Integer(i).toString(), true);
-		    }
-		    neededFileChunks.put(buffer, chunkMap);
-		}else{
-		    HashMap<String, Boolean> chunkMap=availableFileChunks.get(buffer);
-		    HashMap<String, Boolean> neededChunkMap= new HashMap<String, Boolean>();
-		    for(int i=0;i<numOfChunks.get(buffer);i++){
-			if(chunkMap.get(new Integer(i).toString())==null){
-			    neededChunkMap.put(new Integer(i).toString(), true);
-			}
-		    } 
-		    neededFileChunks.put(buffer, neededChunkMap);
-		}
-	    }
-	} catch (IOException e) {
-	    showMessage("IO Error.");
-	}
-	
-    }
-    public static String getFileNeeded(){
-	String result=new String();
-	Set<String> files=neededFileChunks.keySet();
-	if(files.isEmpty()) return null;
-	Iterator<String> it=files.iterator();
-	int i=0;
-	while(it.hasNext()){
-	    if(i++!=0) result+=",";
-	    String buffer=it.next();
-	    result+=buffer+",";
-	    HashMap<String, Boolean> neededChunkMap=neededFileChunks.get(buffer);
-	    Set<String> chunks=neededChunkMap.keySet();
-	    Iterator<String> chunkit=chunks.iterator();
-	    int j=0;
-	    while(chunkit.hasNext()){
-		if(j++!=0) result+="+";
-		result+=chunkit.next();
-	    }
-	}
-	return result;	
-    }
-    
-    public void updateRecord(){
-	File recordFile=new File("/sdcard/ee579record.txt");
-	try {
-	    BufferedWriter outputWriter = new BufferedWriter(new FileWriter(recordFile,false));
-	    Set<String>files= availableFileChunks.keySet();
-	    Iterator<String> it=files.iterator();
-	    while(it.hasNext()){
-		outputWriter.write(it.next()+"\n");
-		HashMap<String, Boolean> chunkMap=availableFileChunks.get(it.next());
-		Set<String> chunks= chunkMap.keySet();
-		Iterator<String> chunkit=chunks.iterator();
-		String chunkList=new String();
-		int i=0;
-		while(chunkit.hasNext()){
-		    if(i++!=0) chunkList+=",";
-		    chunkList+=chunkit.next();
-		}
-		outputWriter.write(chunkList+"\n");
-	    }
-	    outputWriter.flush();
-	    outputWriter.close();
-	} catch (IOException e) {
-	    showMessage("IO Error.");
-	}
-    }*/
 
     /* The following part is a Hash Table + BitMap solution.
      * A hash table maintain the info of all available files and each file maintain its chunk list using a bitmap.
@@ -397,8 +290,8 @@ public class MainActivity extends Activity implements ChannelListener{
     public static HashMap<String, BitMap> availableChunkMap= new HashMap<String, BitMap>();
     public static HashMap<String, BitMap> neededChunkMap= new HashMap<String, BitMap>();
     void initialization(){
-	File listFile=new File("/sdcard/ee579filelist.txt");
-	File recordFile=new File("/sdcard/ee579bitmaprecord.txt");
+	File listFile=new File("/sdcard/PSKfilelist.txt");
+	File recordFile=new File("/sdcard/PSKbitmaprecord.txt");
 	try {
 	    if(!listFile.exists()){	// need to have a config file list all files available
 		showMessage("Fatal Error: Config file not found.");
@@ -415,7 +308,7 @@ public class MainActivity extends Activity implements ChannelListener{
 		numOfChunks.put(fileInfo[0],num);
 		// if the files on the list exist on the phone. record them on a hashtable-bitmap.
 		// can check this to see if it has the file or not when there are requests
-		File oneFile= new File("/sdcard/ee579/"+fileInfo[1]);
+		File oneFile= new File("/sdcard/PSK/"+fileInfo[1]);
 		if(oneFile.exists()){
 		    BitMap chunkMap= new BitMap(num);
 		    for(int i=0;i<num;i++) chunkMap.Mark(i);
@@ -497,7 +390,7 @@ public class MainActivity extends Activity implements ChannelListener{
     // update the record file with the current available chunk map. the map is updated whenever a new chunk is received
     // so this will keep the record file with latest info about which chunks are available
     public static void updateRecord(){
-	File recordFile=new File("/sdcard/ee579bitmaprecord.txt");
+	File recordFile=new File("/sdcard/PSKbitmaprecord.txt");
 	try {
 	    BufferedWriter outputWriter = new BufferedWriter(new FileWriter(recordFile,false));
 	    Set<String>files= availableChunkMap.keySet();
@@ -512,59 +405,7 @@ public class MainActivity extends Activity implements ChannelListener{
 	    outputWriter.flush();
 	    outputWriter.close();
 	} catch (IOException e) {
-	    Log.d("EE579","IO Error.");
+	    Log.d("PSK","IO Error.");
 	}
     }
-    
-    /* The following part is Bloom Filter implementation. 
-     * */
-/*    public static BloomFilter availableChunks=new BloomFilter();
-    void initialization(){
-	File listFile=new File("/sdcard/ee579filelist.txt");
-	try {
-	    if(!listFile.exists()){
-		showMessage("Fatal Error: Config file not found.");
-		return;
-	    }
-	    BufferedReader inputReader = new BufferedReader(new FileReader(listFile));
-	    String buffer = new String(); 
-	    while((buffer=inputReader.readLine())!=null){  
-		String [] fileInfo= buffer.split(",");		
-		allFileList.put(fileInfo[0], fileInfo[1]);
-		int num=divRoundUp(Integer.parseInt(fileInfo[2]),BYTESPERCHUNK);
-		numOfChunks.put(fileInfo[0],num);
-		File oneFile= new File("/sdcard/ee579/"+fileInfo[1]);
-		if(oneFile.exists()){
-		    for(int i=0;i<num;i++){
-			availableChunks.mark(fileInfo[0]+"-"+i);
-		    }
-		}
-	    }
-	    inputReader.close();
-	    File oneFile= new File("/sdcard/ee579/tmp");
-	    if(oneFile.exists()){
-		File[] files=oneFile.listFiles();
-		for(int i=0;i<files.length;i++){
-		    String fileName= files[i].getName().split("\\.")[0];
-		    availableChunks.mark(fileName);
-		}
-	    }
-	}catch(IOException e){
-	    showMessage("IO Error: "+e.toString());
-	}
-    }
-    public static String getFileNeeded(){
-	String result=new String();
-	Set<String>files= allFileList.keySet();
-	Iterator<String> it=files.iterator();
-	while(it.hasNext()){
-	    String buffer=it.next();
-	    for(int i=0;i<numOfChunks.get(buffer);i++){
-		if(!availableChunks.test(buffer+"-"+i)){
-		    result+=buffer+"-"+i+",";
-		}
-	    } 
-	}
-	return result;	
-    }*/
 }

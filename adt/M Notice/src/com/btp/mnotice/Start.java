@@ -2,13 +2,12 @@ package com.btp.mnotice;
 
 import java.lang.reflect.Method;
 
-import com.btp.mnotice.R;
-import android.net.wifi.WifiConfiguration;
-import android.net.wifi.WifiManager;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -92,7 +91,18 @@ public class Start extends Activity
 				intent.putExtra("isclient", isclient);
 				startActivity(intent);	
 			}
-		});			
+		});	
+		
+		
+		Button admin=(Button)findViewById(R.id.admin);		
+		admin.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v)
+			{
+				Intent intent;
+				intent = new Intent("com.btp.mnotice.ADMIN");
+				startActivity(intent);	
+			}
+		});	
 
 	}
 

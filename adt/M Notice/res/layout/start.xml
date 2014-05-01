@@ -7,53 +7,47 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Start" >
-    
-	<TextView
-	    android:id="@+id/textView"
-		android:layout_width="fill_parent"
-		android:layout_height="40dp"
-		android:gravity="center"
-	    android:text="Operate as:"
-	    android:textSize="30dp" 
-	    android:layout_weight="60"
-	    />
-    
+
     <LinearLayout
-        
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_below="@+id/admin"
         android:orientation="vertical"
-        
-        android:layout_below="@+id/textView"
         android:weightSum="100" >
 
-    <Button
-        android:id="@+id/btSer"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="50"
-        android:textSize="25dp"
-        android:background="@drawable/server"        
-        android:gravity="bottom|center"
-        android:layout_margin="10dp"
-        android:textColor="@color/white1"
-        android:text="Server" />
+        <Button
+            android:id="@+id/btSer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/server"
+            android:gravity="bottom|center"
+            android:text="Server"
+            android:textColor="@color/white1"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/btCli"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/btSer"
-        android:layout_weight="50"
-        android:textSize="25dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/client"
-        android:gravity="bottom|center"
-        android:textColor="@color/white1"
-        android:text="Client" />
-    
+        <Button
+            android:id="@+id/btCli"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/btSer"
+            android:layout_margin="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/client"
+            android:gravity="bottom|center"
+            android:text="Client"
+            android:textColor="@color/white1"
+            android:textSize="25dp" />
     </LinearLayout>
 
-    
+    <Button
+        android:id="@+id/admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Admin" />
 
 </RelativeLayout>

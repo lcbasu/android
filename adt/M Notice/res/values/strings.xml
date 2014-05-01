@@ -6,11 +6,12 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
-        <string-array name="notices">
+    <string-array name="notices">
         <item>Placement</item>
         <item>Academics</item>
         <item>DOSW </item>
-
     </string-array>
-    
+
+    <string name="title_activity_admin">Admin</string>
+
 </resources>

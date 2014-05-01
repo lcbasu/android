@@ -13,17 +13,14 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-import com.btp.mnotice.MyHTTPD;
-import com.btp.mnotice.R;
-
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.text.format.Formatter;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;

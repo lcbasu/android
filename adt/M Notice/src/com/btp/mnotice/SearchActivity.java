@@ -1,8 +1,5 @@
 package com.btp.mnotice;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -16,31 +13,20 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-
-
-
-
-
-import com.btp.mnotice.MyHTTPD;
-import com.btp.mnotice.R;
-
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.text.format.Formatter;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
