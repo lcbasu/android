@@ -56,11 +56,11 @@ public class Admin extends Activity {
 						context);
 		 
 					// set title
-					alertDialogBuilder.setTitle("New Notice added");
+					alertDialogBuilder.setTitle("Your Title");
 		 
 					// set dialog message
 					alertDialogBuilder
-						.setMessage("Press Back to add more.")
+						.setMessage("Click yes to exit!")
 						.setCancelable(true);
 		 
 						// create alert dialog
