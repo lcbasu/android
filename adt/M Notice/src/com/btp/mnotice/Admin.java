@@ -3,6 +3,10 @@ package com.btp.mnotice;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,9 +30,15 @@ public class Admin extends Activity {
 		setContentView(R.layout.activity_admin);
 		
 		
-		final EditText from = (EditText) findViewById(R.id.editFrom);
 		final EditText header = (EditText) findViewById(R.id.editHeader);
-		final EditText detail = (EditText) findViewById(R.id.editDetail);
+		final EditText noticeID = (EditText) findViewById(R.id.editNoticeID);
+		final EditText subject = (EditText) findViewById(R.id.editSubject);
+		
+		final EditText addressee = (EditText) findViewById(R.id.editAddressee);
+		final EditText text = (EditText) findViewById(R.id.editText);
+		final EditText authority = (EditText) findViewById(R.id.editIssuingAuthority);
+		final EditText category = (EditText) findViewById(R.id.editCategory);
+		final EditText footer = (EditText) findViewById(R.id.editFooter);
 
 		
 		Button add = (Button)findViewById(R.id.add);
@@ -37,17 +47,33 @@ public class Admin extends Activity {
 			{
 				// TODO Auto-generated method stub
 				
-				String fromStr = from.getText().toString();
-				String headerStr = header.getText().toString();
-				String detailStr = detail.getText().toString();
+				String hdr = header.getText().toString();
+				String ntc = noticeID.getText().toString();
+				String sub = subject.getText().toString();
+				String adr = addressee.getText().toString();
+				String txt = text.getText().toString();
+				String ath = authority.getText().toString();
+				String cat = category.getText().toString();
+				String ftr = footer.getText().toString();
 				
-				String updateStr = "\n" + fromStr + ":" + headerStr + ":" + detailStr + "\n" ;
+				Calendar currentDate = Calendar.getInstance(); //Get the current date
+				SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MMM/dd HH:mm:ss"); //format it as per your requirement
+				String timestamp = formatter.format(currentDate.getTime());
+				
+				String updateStr = "\n" + hdr + ":" + ntc + ":" + sub + ":" + timestamp + ":" + adr + ":" + txt + ":" + ath + ":" + cat + ":" + ftr + "\n" ;
+				
+				
 				
 				update(updateStr);
 				
-				from.setText("");
 				header.setText("");
-				detail.setText("");
+				noticeID.setText("");
+				subject.setText("");	
+				addressee.setText("");
+				text.setText("");
+				authority.setText("");
+				category.setText("");
+				footer.setText("");
 				
 				
 				//	alert box
