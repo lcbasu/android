@@ -1,0 +1,34 @@
+package com.btp.mnotice;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
+
+public class SingleNotice extends Activity
+{
+	@Override
+	protected void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+        this.setContentView(R.layout.detailed_view);
+        
+        Intent i = getIntent();
+        
+        // getting attached intent data
+        String notice = i.getStringExtra("singleNoticeDetail");
+        
+        
+        TextView noticeDisplay = (TextView) findViewById(R.id.singleNotice);
+        int t = 10;
+        while(t > 0)
+        {
+        	notice = notice.concat(" \n " + notice + " \n ");
+        	t--;
+        }
+        noticeDisplay.setText("javjha");
+        noticeDisplay.setMovementMethod(new ScrollingMovementMethod());
+	}
+
+}

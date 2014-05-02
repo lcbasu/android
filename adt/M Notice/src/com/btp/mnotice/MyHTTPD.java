@@ -163,9 +163,14 @@ public class MyHTTPD extends NanoHTTPD
 						String[] split=l.split(":");
 						if(split[0].contentEquals(query))
 						{
-							totalResultFound++;
-							info = info + query +  " : "+ split[1]+"\n";
-							infoListView = infoListView + query  + " : "+ split[1] +":" + split[2] +"#";
+//							totalResultFound++;
+//							info = info + query +  " : "+ split[1]+"\n";
+//							infoListView = infoListView + query  + " : "+ split[1] +":" + split[2] +"#";
+							
+							
+							info = info + "header" + ":" + "noticeID" + "\n";
+							infoListView = infoListView + "header" + ":" + "noticeID" + ":" + "subject" + ":" + "timestamp" + ":" + "addressee" + ":" + "text" + ":" + "issuingAuthority" + ":" + "category" + ":" + "footer" +"#";
+							
 						}
 					}
 					totalResultFoundStr = ""+totalResultFound;

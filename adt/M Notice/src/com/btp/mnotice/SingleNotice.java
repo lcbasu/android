@@ -12,21 +12,44 @@ public class SingleNotice extends Activity
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.single_notice_view);   
-        TextView noticeDisplay = (TextView) findViewById(R.id.singleNotice);
+        this.setContentView(R.layout.detailed_view);
+        
         Intent i = getIntent();
         
         // getting attached intent data
         String notice = i.getStringExtra("singleNoticeDetail");
         
-        int t = 10;
-        while(t > 0)
-        {
-        	notice = notice.concat(" \n " + notice + " \n ");
-        	t--;
-        }
-        noticeDisplay.setText(notice);
-        noticeDisplay.setMovementMethod(new ScrollingMovementMethod());
+		String[] singleNotice = new String[]{};
+
+		singleNotice = notice.split(":");
+        
+		
+		//String toDisplay = chapter.noticeID + ":" + chapter.timestamp + ":" + chapter.addressee + ":" + chapter.subject + ":" + chapter.text + ":" + chapter.issuingAuthority;
+
+		
+        TextView noticeID = (TextView) findViewById(R.id.noticeID);
+        noticeID.setText(singleNotice[0]);
+
+        TextView timestamp = (TextView) findViewById(R.id.timestamp);
+        timestamp.setText(singleNotice[1]);
+        
+        
+        TextView addressee = (TextView) findViewById(R.id.addressee);
+        addressee.setText(singleNotice[2]);
+        
+        
+        TextView subject = (TextView) findViewById(R.id.subject);
+        subject.setText(singleNotice[3]);
+        
+        
+		
+        TextView text = (TextView) findViewById(R.id.text);
+        text.setText(singleNotice[4]);
+        text.setMovementMethod(new ScrollingMovementMethod());
+        
+        
+        TextView issuingAuthority = (TextView) findViewById(R.id.issuingAuthority);
+        issuingAuthority.setText(singleNotice[5]);
 	}
 
 }
