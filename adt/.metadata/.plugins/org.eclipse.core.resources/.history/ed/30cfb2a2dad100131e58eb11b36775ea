@@ -146,7 +146,7 @@ public class ListViewWithBaseAdapter extends Activity
 
 		List<codeLeanChapter> codeLeanChaptersList = new ArrayList<codeLeanChapter>();
 
-		for(int i=0;i<ListItems.length;i++)
+		for(int i=0;i<10;i++)
 		{
 			String[] singleNotice = new String[]{};
 
