@@ -57,7 +57,7 @@ public class Admin extends Activity {
 				String ftr = footer.getText().toString();
 				
 				Calendar currentDate = Calendar.getInstance(); //Get the current date
-				SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MMM/dd"); //format it as per your requirement
+				SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MMM/dd HH:mm:ss"); //format it as per your requirement
 				String timestamp = formatter.format(currentDate.getTime());
 				
 				String updateStr = "\n" + hdr + ":" + ntc + ":" + sub + ":" + timestamp + ":" + adr + ":" + txt + ":" + ath + ":" + cat + ":" + ftr + "\n" ;
