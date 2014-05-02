@@ -108,7 +108,7 @@ public class Admin extends Activity {
 	{
 		try
 		{
-			File file = new File(Environment.getExternalStorageDirectory().getPath() + "/inputfile2.txt");
+			File file = new File(Environment.getExternalStorageDirectory().getPath() + "/inputfile1.txt");
 			
 			if(!file.exists())
 			{
