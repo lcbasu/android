@@ -217,7 +217,7 @@ public class MainActivity extends Activity
 				public void onClick(View v) 
 				{
 					Intent intent;
-					intent = new Intent("com.btp.mnotice.RESULTLISTVIEW");
+					intent = new Intent("com.btp.mnotice.LISTVIEWWITHBASEADAPTER");
 
 					//intent.putExtra("isclient", isclient);
 					startActivity(intent);
