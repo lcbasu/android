@@ -153,7 +153,7 @@ public class MyHTTPD extends NanoHTTPD
 			
 			try
 			{
-				File set1 = new File(Environment.getExternalStorageDirectory().getPath() + "/inputfile2.txt");		
+				File set1 = new File(Environment.getExternalStorageDirectory().getPath() + "/inputfile1.txt");		
 				if(set1.canRead())
 				{
 					BufferedReader buffer1 = new BufferedReader(new FileReader(set1));
@@ -169,7 +169,7 @@ public class MyHTTPD extends NanoHTTPD
 							
 							
 							info = info + split[7] + ":" + split[2] + "\n";
-							infoListView = infoListView + split[0] + ":" + split[1] + ":" + split[2] + ":" + split[3] + ":" + split[4] + ":" + split[5] + ":" + split[6] + ":" + split[7] + ":" + split[8] +"#";
+							infoListView = infoListView + "header" + ":" + "noticeID" + ":" + "subject" + ":" + "timestamp" + ":" + "addressee" + ":" + "text" + ":" + "issuingAuthority" + ":" + "category" + ":" + "footer" +"#";
 							
 						}
 					}
