@@ -24,7 +24,7 @@ public class ListViewWithBaseAdapter extends Activity
 
 	public String[] ListItems = new String[]{};
 
-	public class codeLeanChapter
+	public class noticeDB
 	{
 		String header;
 		String noticeID;
@@ -40,25 +40,25 @@ public class ListViewWithBaseAdapter extends Activity
 
 
 
-	CodeLearnAdapter chapterListAdapter;
+	NoticeDBList noticeListAdapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_view_with_simple_adapter);
 
 
-		chapterListAdapter = new CodeLearnAdapter();
+		noticeListAdapter = new NoticeDBList();
 
-		ListView codeLearnLessons = (ListView)findViewById(R.id.listView1);
-		codeLearnLessons.setAdapter(chapterListAdapter);
+		ListView noticeList = (ListView)findViewById(R.id.listView1);
+		noticeList.setAdapter(noticeListAdapter);
 
-		codeLearnLessons.setOnItemClickListener(new OnItemClickListener() {
+		noticeList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 
-				codeLeanChapter chapter = chapterListAdapter.getCodeLearnChapter(arg2);
+				noticeDB notice = noticeListAdapter.getNotices(arg2);
 
 
 
@@ -66,7 +66,7 @@ public class ListViewWithBaseAdapter extends Activity
 				Intent i = new Intent(getApplicationContext(), SingleNotice.class);
 				
 				
-				String toDisplay = chapter.noticeID + ":" + chapter.timestamp + ":" + chapter.addressee + ":" + chapter.subject + ":" + chapter.text + ":" + chapter.issuingAuthority;
+				String toDisplay = notice.noticeID + ":" + notice.timestamp + ":" + notice.addressee + ":" + notice.subject + ":" + notice.text + ":" + notice.issuingAuthority;
 
 
 				// sending data to new activity
@@ -77,26 +77,26 @@ public class ListViewWithBaseAdapter extends Activity
 
 
 
-				Toast.makeText(ListViewWithBaseAdapter.this, chapter.noticeID,Toast.LENGTH_LONG).show();
+				Toast.makeText(ListViewWithBaseAdapter.this, notice.noticeID,Toast.LENGTH_LONG).show();
 
 			}
 		});
 	}
 
 
-	public class CodeLearnAdapter extends BaseAdapter {
+	public class NoticeDBList extends BaseAdapter {
 
-		List<codeLeanChapter> codeLeanChapterList = getDataForListView();
+		List<noticeDB> noticesList = getDataForListView();
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return codeLeanChapterList.size();
+			return noticesList.size();
 		}
 
 		@Override
-		public codeLeanChapter getItem(int arg0) {
+		public noticeDB getItem(int arg0) {
 			// TODO Auto-generated method stub
-			return codeLeanChapterList.get(arg0);
+			return noticesList.get(arg0);
 		}
 
 		@Override
@@ -114,20 +114,30 @@ public class ListViewWithBaseAdapter extends Activity
 				arg1 = inflater.inflate(R.layout.listitem, arg2,false);
 			}
 
-			TextView chapterName = (TextView)arg1.findViewById(R.id.textView1);
-			TextView chapterDesc = (TextView)arg1.findViewById(R.id.textView2);
+			TextView noticeHeader = (TextView)arg1.findViewById(R.id.textView1);
+			TextView noticeSubject = (TextView)arg1.findViewById(R.id.textView2);
 
-			codeLeanChapter chapter = codeLeanChapterList.get(arg0);
+			noticeDB notice = noticesList.get(arg0);
+			
 
-			chapterName.setText(chapter.header);
-			chapterDesc.setText(chapter.subject);
+			if(notice.header.length() > 30)
+				noticeHeader.setText(notice.header.substring(0, 30)+"...");
+			else
+				noticeHeader.setText(notice.header);
+			
+			
+			
+			if(notice.subject.length() > 40)
+				noticeSubject.setText(notice.subject.substring(0, 40)+"...");
+			else
+				noticeSubject.setText(notice.subject);
 
 			return arg1;
 		}
 
-		public codeLeanChapter getCodeLearnChapter(int position)
+		public noticeDB getNotices(int position)
 		{
-			return codeLeanChapterList.get(position);
+			return noticesList.get(position);
 		}
 
 	}
@@ -139,12 +149,12 @@ public class ListViewWithBaseAdapter extends Activity
 		return true;
 	}
 
-	public List<codeLeanChapter> getDataForListView()
+	public List<noticeDB> getDataForListView()
 	{
 
 		ListItems = MyHTTPD.finalResult.split("#");
 
-		List<codeLeanChapter> codeLeanChaptersList = new ArrayList<codeLeanChapter>();
+		List<noticeDB> noticeList = new ArrayList<noticeDB>();
 
 		for(int i=0;i<ListItems.length;i++)
 		{
@@ -152,28 +162,28 @@ public class ListViewWithBaseAdapter extends Activity
 
 			singleNotice = ListItems[i].split(":");
 
-			codeLeanChapter chapter = new codeLeanChapter();
+			noticeDB notice = new noticeDB();
 
 
 
 
-			chapter.header = singleNotice[0];
-			chapter.noticeID = singleNotice[1];
-			chapter.subject = singleNotice[2];
-			chapter.timestamp = singleNotice[3];
-			chapter.addressee = singleNotice[4];
-			chapter.text = singleNotice[5];
-			chapter.issuingAuthority = singleNotice[6];
-			chapter.category = singleNotice[7];
-			chapter.footer = singleNotice[8];
+			notice.header = singleNotice[0];
+			notice.noticeID = singleNotice[1];
+			notice.subject = singleNotice[2];
+			notice.timestamp = singleNotice[3];
+			notice.addressee = singleNotice[4];
+			notice.text = singleNotice[5];
+			notice.issuingAuthority = singleNotice[6];
+			notice.category = singleNotice[7];
+			notice.footer = singleNotice[8];
 
 
 
 
-			codeLeanChaptersList.add(chapter);
+			noticeList.add(notice);
 		}
 
-		return codeLeanChaptersList;
+		return noticeList;
 
 	}
 }

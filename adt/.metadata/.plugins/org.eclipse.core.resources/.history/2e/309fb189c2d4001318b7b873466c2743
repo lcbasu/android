@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="notice_prompt">Choose an option</string>
+    <string name="app_name">M Notice</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string-array name="notices">
+        <item>Placement</item>
+        <item>Academics</item>
+        <item>DOSW </item>
+    </string-array>
+
+    <string name="title_activity_admin">Admin</string>
+
+</resources>
