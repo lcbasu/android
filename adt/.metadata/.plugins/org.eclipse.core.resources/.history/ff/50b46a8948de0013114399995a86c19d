@@ -1,0 +1,29 @@
+package com.basu.android.tnb;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Button;
+
+public class StartingPoint extends Activity
+{
+	int counter;
+	Button add;
+	Button sub;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_starting_point);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.starting_point, menu);
+		return true;
+	}
+
+}
