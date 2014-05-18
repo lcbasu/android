@@ -120,15 +120,15 @@ public class ListViewWithBaseAdapter extends Activity
 			noticeDB notice = noticesList.get(arg0);
 			
 
-			if(notice.header.length() > 30)
-				noticeHeader.setText(notice.header.substring(0, 30)+"...");
+			if(notice.header.length() > 20)
+				noticeHeader.setText(notice.header.substring(0, 20)+"...");
 			else
 				noticeHeader.setText(notice.header);
 			
 			
 			
-			if(notice.subject.length() > 40)
-				noticeSubject.setText(notice.subject.substring(0, 40)+"...");
+			if(notice.subject.length() > 30)
+				noticeSubject.setText(notice.subject.substring(0, 30)+"...");
 			else
 				noticeSubject.setText(notice.subject);
 
