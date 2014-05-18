@@ -2586,3 +2586,113 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2014-05-18 07:41:37.420
 !MESSAGE Failed to load properties file for project 'TheNewBoston'
+
+!ENTRY org.eclipse.core.resources 2 2 2014-05-18 07:47:34.211
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2014-05-18 07:47:34.211
+!MESSAGE The project description file (.project) for 'Splash' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-05-18 08:02:42.616
+!MESSAGE Unable to read /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+!STACK 0
+com.android.io.StreamException: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:55)
+	at com.android.ide.common.xml.AndroidManifestParser.parse(AndroidManifestParser.java:609)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseUnchecked(AndroidManifestHelper.java:75)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parse(AndroidManifestHelper.java:102)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseForData(AndroidManifestHelper.java:177)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.findAndroidProjectByAppName(ProjectHelper.java:604)
+	at com.android.ide.eclipse.adt.DebuggerConnector$WorkspaceAppCache.isWorkspaceApp(DebuggerConnector.java:96)
+	at com.android.ide.eclipse.adt.DebuggerConnector.isWorkspaceApp(DebuggerConnector.java:60)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.isImportantMessage(LogCatMonitor.java:179)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.checkMessages(LogCatMonitor.java:157)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.access$4(LogCatMonitor.java:148)
+	at com.android.ide.eclipse.ddms.LogCatMonitor$3.bufferChanged(LogCatMonitor.java:140)
+	at com.android.ddmuilib.logcat.LogCatReceiver.sendLogChangedEvent(LogCatReceiver.java:140)
+	at com.android.ddmuilib.logcat.LogCatReceiver.log(LogCatReceiver.java:107)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.notifyListeners(LogCatReceiverTask.java:129)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.access$300(LogCatReceiverTask.java:36)
+	at com.android.ddmlib.logcat.LogCatReceiverTask$LogCatOutputReceiver.processLogLines(LogCatReceiverTask.java:114)
+	at com.android.ddmlib.logcat.LogCatReceiverTask$LogCatOutputReceiver.processNewLines(LogCatReceiverTask.java:107)
+	at com.android.ddmlib.MultiLineReceiver.addOutput(MultiLineReceiver.java:99)
+	at com.android.ddmlib.AdbHelper.executeRemoteCommand(AdbHelper.java:441)
+	at com.android.ddmlib.AdbHelper.executeRemoteCommand(AdbHelper.java:347)
+	at com.android.ddmlib.Device.executeShellCommand(Device.java:444)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.run(LogCatReceiverTask.java:75)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:783)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:289)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:278)
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:49)
+	... 23 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-05-18 08:02:47.828
+!MESSAGE Unable to read /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+!STACK 0
+com.android.io.StreamException: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:55)
+	at com.android.ide.common.xml.AndroidManifestParser.parse(AndroidManifestParser.java:609)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseUnchecked(AndroidManifestHelper.java:75)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parse(AndroidManifestHelper.java:102)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseForData(AndroidManifestHelper.java:177)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.findAndroidProjectByAppName(ProjectHelper.java:604)
+	at com.android.ide.eclipse.adt.DebuggerConnector$WorkspaceAppCache.isWorkspaceApp(DebuggerConnector.java:96)
+	at com.android.ide.eclipse.adt.DebuggerConnector.isWorkspaceApp(DebuggerConnector.java:60)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.isImportantMessage(LogCatMonitor.java:179)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.checkMessages(LogCatMonitor.java:157)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.access$4(LogCatMonitor.java:148)
+	at com.android.ide.eclipse.ddms.LogCatMonitor$3.bufferChanged(LogCatMonitor.java:140)
+	at com.android.ddmuilib.logcat.LogCatReceiver.sendLogChangedEvent(LogCatReceiver.java:140)
+	at com.android.ddmuilib.logcat.LogCatReceiver.log(LogCatReceiver.java:107)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.notifyListeners(LogCatReceiverTask.java:129)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.access$300(LogCatReceiverTask.java:36)
+	at com.android.ddmlib.logcat.LogCatReceiverTask$LogCatOutputReceiver.processLogLines(LogCatReceiverTask.java:114)
+	at com.android.ddmlib.logcat.LogCatReceiverTask$LogCatOutputReceiver.processNewLines(LogCatReceiverTask.java:107)
+	at com.android.ddmlib.MultiLineReceiver.addOutput(MultiLineReceiver.java:99)
+	at com.android.ddmlib.AdbHelper.executeRemoteCommand(AdbHelper.java:441)
+	at com.android.ddmlib.AdbHelper.executeRemoteCommand(AdbHelper.java:347)
+	at com.android.ddmlib.Device.executeShellCommand(Device.java:444)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.run(LogCatReceiverTask.java:75)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:783)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:289)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:278)
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:49)
+	... 23 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-05-18 08:03:25.228
+!MESSAGE Unable to read /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+!STACK 0
+com.android.io.StreamException: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:55)
+	at com.android.ide.common.xml.AndroidManifestParser.parse(AndroidManifestParser.java:609)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseUnchecked(AndroidManifestHelper.java:75)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parse(AndroidManifestHelper.java:102)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseForData(AndroidManifestHelper.java:177)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.findAndroidProjectByAppName(ProjectHelper.java:604)
+	at com.android.ide.eclipse.adt.DebuggerConnector$WorkspaceAppCache.isWorkspaceApp(DebuggerConnector.java:96)
+	at com.android.ide.eclipse.adt.DebuggerConnector.isWorkspaceApp(DebuggerConnector.java:60)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.isImportantMessage(LogCatMonitor.java:179)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.checkMessages(LogCatMonitor.java:157)
+	at com.android.ide.eclipse.ddms.LogCatMonitor.access$4(LogCatMonitor.java:148)
+	at com.android.ide.eclipse.ddms.LogCatMonitor$3.bufferChanged(LogCatMonitor.java:140)
+	at com.android.ddmuilib.logcat.LogCatReceiver.sendLogChangedEvent(LogCatReceiver.java:140)
+	at com.android.ddmuilib.logcat.LogCatReceiver.log(LogCatReceiver.java:107)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.notifyListeners(LogCatReceiverTask.java:129)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.access$300(LogCatReceiverTask.java:36)
+	at com.android.ddmlib.logcat.LogCatReceiverTask$LogCatOutputReceiver.processLogLines(LogCatReceiverTask.java:114)
+	at com.android.ddmlib.logcat.LogCatReceiverTask$LogCatOutputReceiver.processNewLines(LogCatReceiverTask.java:107)
+	at com.android.ddmlib.MultiLineReceiver.addOutput(MultiLineReceiver.java:99)
+	at com.android.ddmlib.AdbHelper.executeRemoteCommand(AdbHelper.java:441)
+	at com.android.ddmlib.AdbHelper.executeRemoteCommand(AdbHelper.java:347)
+	at com.android.ddmlib.Device.executeShellCommand(Device.java:444)
+	at com.android.ddmlib.logcat.LogCatReceiverTask.run(LogCatReceiverTask.java:75)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.eclipse.core.internal.resources.ResourceException: File not found: /Users/LokeshBasu/Documents/android/adt/Splash/AndroidManifest.xml.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:783)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:289)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:278)
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:49)
+	... 23 more
