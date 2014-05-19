@@ -27,8 +27,8 @@ public class Splash extends Activity {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} finally {
-					Intent openStartingPoint = new Intent("com.basu.android.tnb.STARTINGPOINT");
-					startActivity(openStartingPoint);
+					Intent openMenu = new Intent("com.basu.android.tnb.MENU");
+					startActivity(openMenu);
 				}
 			}
 		};
