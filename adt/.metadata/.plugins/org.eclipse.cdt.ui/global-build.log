@@ -1,0 +1,30 @@
+
+**** Build of configuration Debug for project CppTest ****
+
+make all 
+Building file: ../src/CppTest.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CppTest.d" -MT"src/CppTest.d" -o "src/CppTest.o" "../src/CppTest.cpp"
+Finished building: ../src/CppTest.cpp
+ 
+Building target: CppTest
+Invoking: MacOS X C++ Linker
+g++  -o "CppTest"  ./src/CppTest.o   
+Finished building target: CppTest
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project CppTest ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project CppTest ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****

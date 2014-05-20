@@ -29,5 +29,4 @@ INDEX VERSION 1.126+/Users/LokeshBasu/Documents/android/adt/.metadata/.plugins/o
 129585322.index
 156905802.index
 2701851156.index
-3852805797.index
 1542256292.index
