@@ -15,11 +15,6 @@ import android.widget.ToggleButton;
 
 public class TextPlay extends Activity {
 
-	Button checkCommand;
-	ToggleButton passToggle;
-	EditText input;
-	TextView display;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -27,7 +22,10 @@ public class TextPlay extends Activity {
 		setContentView(R.layout.text);
 
 		// get the references
-		getreferences();
+		Button checkCommand = (Button) findViewById(R.id.bResults);
+		final ToggleButton passToggle = (ToggleButton) findViewById(R.id.tbPassword);
+		final EditText input = (EditText) findViewById(R.id.etCommands);
+		final TextView display = (TextView) findViewById(R.id.tvResults);
 
 		// set up the on click listener on toggle button
 		passToggle.setOnClickListener(new View.OnClickListener() {
@@ -86,15 +84,5 @@ public class TextPlay extends Activity {
 				}
 			}
 		});
-	}
-
-	private void getreferences() {
-		// TODO Auto-generated method stub
-
-		checkCommand = (Button) findViewById(R.id.bResults);
-		passToggle = (ToggleButton) findViewById(R.id.tbPassword);
-		input = (EditText) findViewById(R.id.etCommands);
-		display = (TextView) findViewById(R.id.tvResults);
-
 	}
 }
