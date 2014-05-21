@@ -34,16 +34,17 @@ public class TextPlay extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if (passToggle.isChecked()) {
-					input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+					input.setInputType(InputType.TYPE_CLASS_TEXT
+							| InputType.TYPE_TEXT_VARIATION_PASSWORD);
 				} else {
 					input.setInputType(InputType.TYPE_CLASS_TEXT);
 				}
 
 			}
 		});
-		
+
 		checkCommand.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -61,10 +62,25 @@ public class TextPlay extends Activity {
 					Random randomNumber = new Random();
 					display.setText("Loki");
 					display.setTextSize(randomNumber.nextInt(50));
-					display.setTextColor(Color.rgb(randomNumber.nextInt(265), randomNumber.nextInt(265), randomNumber.nextInt(265)));
+					display.setTextColor(Color.rgb(randomNumber.nextInt(265),
+							randomNumber.nextInt(265),
+							randomNumber.nextInt(265)));
+					switch (randomNumber.nextInt(3)) {
+					case 0:
+						display.setGravity(Gravity.LEFT);
+						break;
+					case 1:
+						display.setGravity(Gravity.CENTER);
+						break;
+					case 2:
+						display.setGravity(Gravity.RIGHT);
+						break;
+					}
+
 				} else {
 					display.setText("invalid");
 					display.setGravity(Gravity.CENTER);
+					display.setTextColor(Color.BLACK);
 				}
 			}
 		});
