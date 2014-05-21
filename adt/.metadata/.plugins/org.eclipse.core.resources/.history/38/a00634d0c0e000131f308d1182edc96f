@@ -61,7 +61,6 @@ public class TextPlay extends Activity {
 					Random randomNumber = new Random();
 					display.setText("Loki");
 					display.setTextSize(randomNumber.nextInt(50));
-					display.setTextColor(Color.rgb(randomNumber.nextInt(265), randomNumber.nextInt(265), randomNumber.nextInt(265)));
 				} else {
 					display.setText("invalid");
 					display.setGravity(Gravity.CENTER);
