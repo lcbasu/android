@@ -25,19 +25,34 @@ public final class R {
         public static final int splash_background=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f090007;
+        public static final int action_settings=0x7f090015;
+        public static final int analogClock1=0x7f090010;
         public static final int bAdd=0x7f090001;
-        public static final int bResults=0x7f090004;
+        public static final int bResults=0x7f090012;
         public static final int bSub=0x7f090002;
-        public static final int etCommands=0x7f090003;
-        public static final int tbPassword=0x7f090005;
+        public static final int button1=0x7f09000f;
+        public static final int editText1=0x7f090004;
+        public static final int editText2=0x7f090006;
+        public static final int editText3=0x7f090008;
+        public static final int editText4=0x7f09000a;
+        public static final int editText5=0x7f09000c;
+        public static final int editText6=0x7f09000e;
+        public static final int etCommands=0x7f090011;
+        public static final int tbPassword=0x7f090013;
+        public static final int textView1=0x7f090003;
+        public static final int textView2=0x7f090005;
+        public static final int textView3=0x7f090007;
+        public static final int textView4=0x7f090009;
+        public static final int textView5=0x7f09000b;
+        public static final int textView6=0x7f09000d;
         public static final int tvDisplay=0x7f090000;
-        public static final int tvResults=0x7f090006;
+        public static final int tvResults=0x7f090014;
     }
     public static final class layout {
         public static final int activity_starting_point=0x7f030000;
-        public static final int splash=0x7f030001;
-        public static final int text=0x7f030002;
+        public static final int email=0x7f030001;
+        public static final int splash=0x7f030002;
+        public static final int text=0x7f030003;
     }
     public static final class menu {
         public static final int starting_point=0x7f080000;
