@@ -1,0 +1,16 @@
+//============================================================================
+// Name        : SamsungTest.cpp
+// Author      : Lokesh Basu
+// Version     :
+// Copyright   : Samsung Research Institute Bangalore, India
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	return 0;
+}

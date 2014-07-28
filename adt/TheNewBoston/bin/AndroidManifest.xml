@@ -44,6 +44,10 @@
             android:name="com.basu.android.tnb.TextPlay"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.basu.android.tnb.Email"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
