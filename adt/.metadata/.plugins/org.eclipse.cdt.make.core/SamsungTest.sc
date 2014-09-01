@@ -176,6 +176,7 @@
 <definedSymbol symbol="__unsafe_unretained="/>
 <definedSymbol symbol="__DYNAMIC__=1"/>
 <definedSymbol symbol="__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__=1090"/>
+<definedSymbol symbol="__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__=101000"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
@@ -353,6 +354,7 @@
 <definedSymbol symbol="__unsafe_unretained="/>
 <definedSymbol symbol="__DYNAMIC__=1"/>
 <definedSymbol symbol="__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__=1090"/>
+<definedSymbol symbol="__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__=101000"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=199901L"/>

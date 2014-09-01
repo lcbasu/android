@@ -122,3 +122,17 @@ Finished building target: SamsungTest
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project CppTest ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project SamsungTest ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****
