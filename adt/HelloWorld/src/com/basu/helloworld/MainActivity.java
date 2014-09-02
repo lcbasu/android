@@ -3,13 +3,19 @@ package com.basu.helloworld;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.opengl.GLSurfaceView;
 
 public class MainActivity extends Activity {
+	
+	private GLSurfaceView mGLView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+        // Create a GLSurfaceView instance and set it
+        // as the ContentView for this Activity
+        mGLView = new MyGLSurfaceView(this);
+        setContentView(mGLView);
 	}
 
 	@Override

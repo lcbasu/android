@@ -7,6 +7,13 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
+    
+    <!-- Tell the system this app requires OpenGL ES 2.0. -->
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    
+    <!-- Support only ifavailable on hardware -->
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+	<supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
 
     <application
         android:allowBackup="true"
