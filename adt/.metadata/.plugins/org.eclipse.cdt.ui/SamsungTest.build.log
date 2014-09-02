@@ -2,6 +2,15 @@
 **** Build of configuration Debug for project SamsungTest ****
 
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/SamsungTest.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SamsungTest.d" -MT"src/SamsungTest.d" -o "src/SamsungTest.o" "../src/SamsungTest.cpp"
+Finished building: ../src/SamsungTest.cpp
+ 
+Building target: SamsungTest
+Invoking: MacOS X C++ Linker
+g++  -o "SamsungTest"  ./src/SamsungTest.o   
+Finished building target: SamsungTest
+ 
 
 **** Build Finished ****
