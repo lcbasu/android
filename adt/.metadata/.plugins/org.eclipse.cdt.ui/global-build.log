@@ -280,3 +280,51 @@ Finished building target: SamsungTest
  
 
 **** Build Finished ****
+
+**** Clean-only build of configuration Debug for project CppTest ****
+
+make clean 
+rm -rf  ./src/CppTest.o  ./src/CppTest.d  CppTest
+ 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project SamsungTest ****
+
+make clean 
+rm -rf  ./src/SamsungTest.o  ./src/SamsungTest.d  SamsungTest
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project CppTest ****
+
+make all 
+Building file: ../src/CppTest.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CppTest.d" -MT"src/CppTest.d" -o "src/CppTest.o" "../src/CppTest.cpp"
+Finished building: ../src/CppTest.cpp
+ 
+Building target: CppTest
+Invoking: MacOS X C++ Linker
+g++  -o "CppTest"  ./src/CppTest.o   
+Finished building target: CppTest
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project SamsungTest ****
+
+make all 
+Building file: ../src/SamsungTest.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SamsungTest.d" -MT"src/SamsungTest.d" -o "src/SamsungTest.o" "../src/SamsungTest.cpp"
+Finished building: ../src/SamsungTest.cpp
+ 
+Building target: SamsungTest
+Invoking: MacOS X C++ Linker
+g++  -o "SamsungTest"  ./src/SamsungTest.o   
+Finished building target: SamsungTest
+ 
+
+**** Build Finished ****
