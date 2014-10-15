@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -24,7 +25,9 @@ public class MainActivity extends Activity {
 	
 	public void onClick(View view) {
 		
-		Toast.makeText(this, "Button 1 pressed", Toast.LENGTH_LONG).show();
+		EditText text = (EditText) findViewById(R.id.main_input);
+		
+		Toast.makeText(this, text.getText().toString(), Toast.LENGTH_LONG).show();
 	}
 
 }
