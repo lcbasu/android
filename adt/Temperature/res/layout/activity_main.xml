@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/radioGroup1"
         android:layout_below="@+id/radioGroup1"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="37dp"
         android:onClick="onClick"
         android:text="@string/calc" />
 
