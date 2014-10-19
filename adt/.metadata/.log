@@ -14198,3 +14198,6 @@ java.lang.IllegalArgumentException: Path for project must have only one segment.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-10-19 14:36:49.342
+!MESSAGE Failed to load properties file for project 'XMLParser'
