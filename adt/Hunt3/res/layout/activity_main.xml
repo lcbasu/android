@@ -50,4 +50,12 @@
             android1:text="Vertical" />
     </RadioGroup>
 
+    <ProgressBar
+        android1:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android1:layout_width="fill_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_alignLeft="@+id/orientation"
+        android1:layout_centerVertical="true" />
+
 </RelativeLayout>
