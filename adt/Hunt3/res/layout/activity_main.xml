@@ -58,4 +58,12 @@
         android1:layout_alignLeft="@+id/orientation"
         android1:layout_centerVertical="true" />
 
+    <SeekBar
+        android1:id="@+id/seekBar1"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentLeft="true"
+        android1:layout_below="@+id/progressBar1"
+        android1:layout_marginTop="40dp" />
+
 </RelativeLayout>
